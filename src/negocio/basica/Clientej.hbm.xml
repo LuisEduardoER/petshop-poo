@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/09/2011 20:33:15 by Hibernate Tools 3.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="negocio.basica.Clientej" table="clientej" schema="public">
+        <id name="pessoaCodPessoa" type="int">
+            <column name="pessoa_cod_pessoa" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pessoa" class="negocio.basica.Pessoa" update="false" insert="false" fetch="select">
+            <column name="pessoa_cod_pessoa" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="razaosocial" type="string">
+            <column name="razaosocial" length="50" not-null="true" />
+        </property>
+        <property name="nomefantasia" type="string">
+            <column name="nomefantasia" length="50" />
+        </property>
+        <property name="cnpj" type="string">
+            <column name="cnpj" length="14" not-null="true" />
+        </property>
+        <property name="ie" type="string">
+            <column name="ie" length="15" not-null="true" />
+        </property>
+        <property name="dataabertura" type="date">
+            <column name="dataabertura" length="13" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

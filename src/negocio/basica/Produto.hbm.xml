@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/09/2011 20:33:15 by Hibernate Tools 3.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="negocio.basica.Produto" table="produto" schema="public">
+        <composite-id name="id" class="negocio.basica.ProdutoId">
+            <key-property name="codProduto" type="int">
+                <column name="cod_produto" />
+            </key-property>
+            <key-property name="fornecedorPessoaCodPessoa" type="int">
+                <column name="fornecedor_pessoa_cod_pessoa" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="fornecedor" class="negocio.basica.Fornecedor" update="false" insert="false" fetch="select">
+            <column name="fornecedor_pessoa_cod_pessoa" not-null="true" />
+        </many-to-one>
+        <property name="nome" type="string">
+            <column name="nome" length="50" not-null="true" />
+        </property>
+        <property name="marca" type="string">
+            <column name="marca" length="20" not-null="true" />
+        </property>
+        <property name="grupo" type="string">
+            <column name="grupo" length="20" not-null="true" />
+        </property>
+        <property name="unidade" type="string">
+            <column name="unidade" length="5" not-null="true" />
+        </property>
+        <property name="peso" type="double">
+            <column name="peso" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="cor" type="string">
+            <column name="cor" length="15" not-null="true" />
+        </property>
+        <property name="lote" type="string">
+            <column name="lote" length="20" not-null="true" />
+        </property>
+        <property name="dtvalidade" type="date">
+            <column name="dtvalidade" length="13" not-null="true" />
+        </property>
+        <property name="precovenda" type="double">
+            <column name="precovenda" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="precocompra" type="double">
+            <column name="precocompra" precision="17" scale="17" not-null="true" />
+        </property>
+        <set name="servicos" inverse="false" table="servico_has_produto">
+            <key>
+                <column name="produto_cod_produto" not-null="true" />
+                <column name="produto_fornecedor_pessoa_cod_pessoa" not-null="true" />
+            </key>
+            <many-to-many entity-name="negocio.basica.Servico">
+                <column name="servico_cod_servico" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
