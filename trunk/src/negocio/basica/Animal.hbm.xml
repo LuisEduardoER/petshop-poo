@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/09/2011 20:33:15 by Hibernate Tools 3.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="negocio.basica.Animal" table="animal" schema="public">
+        <composite-id name="id" class="negocio.basica.AnimalId">
+            <key-property name="codAnimal" type="int">
+                <column name="cod_animal" />
+            </key-property>
+            <key-property name="pessoaCodPessoa" type="int">
+                <column name="pessoa_cod_pessoa" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="pessoa" class="negocio.basica.Pessoa" update="false" insert="false" fetch="select">
+            <column name="pessoa_cod_pessoa" not-null="true" />
+        </many-to-one>
+        <property name="nome" type="string">
+            <column name="nome" length="50" not-null="true" />
+        </property>
+        <property name="raca" type="string">
+            <column name="raca" length="30" not-null="true" />
+        </property>
+        <property name="pedigre" type="string">
+            <column name="pedigre" length="30" not-null="true" />
+        </property>
+        <property name="nascimento" type="date">
+            <column name="nascimento" length="13" not-null="true" />
+        </property>
+        <property name="pelagem" type="string">
+            <column name="pelagem" length="20" not-null="true" />
+        </property>
+        <property name="cor" type="string">
+            <column name="cor" length="20" not-null="true" />
+        </property>
+        <property name="foto" type="java.lang.Integer">
+            <column name="foto" />
+        </property>
+        <property name="observacao" type="string">
+            <column name="observacao" length="250" />
+        </property>
+        <set name="servicos" inverse="false" table="servico_has_animal">
+            <key>
+                <column name="animal_cod_animal" not-null="true" />
+                <column name="animal_pessoa_cod_pessoa" not-null="true" />
+            </key>
+            <many-to-many entity-name="negocio.basica.Servico">
+                <column name="servico_cod_servico" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
