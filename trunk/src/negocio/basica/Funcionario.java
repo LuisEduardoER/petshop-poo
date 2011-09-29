@@ -12,7 +12,17 @@ import java.util.Set;
 public class Funcionario  implements java.io.Serializable {
 
 
-     private int codPessoa;
+     @Override
+	public String toString() {
+		return "Funcionario [codPessoa=" + codPessoa + ", pessoa=" + pessoa
+				+ ", matricula=" + matricula + ", login=" + login + ", senha="
+				+ senha + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg
+				+ ", datanasc=" + datanasc + ", atendentes=" + atendentes
+				+ ", agendas=" + agendas + ", veterinarios=" + veterinarios
+				+ ", servicos=" + servicos + "]";
+	}
+
+	private int codPessoa;
      private Pessoa pessoa;
      private String matricula;
      private String login;
