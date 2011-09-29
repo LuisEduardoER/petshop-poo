@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 08/09/2011 20:33:15 by Hibernate Tools 3.2.0.CR1 -->
+<!-- Generated 22/09/2011 20:56:28 by Hibernate Tools 3.2.0.CR1 -->
 <hibernate-mapping>
     <class name="negocio.basica.Servico" table="servico" schema="public">
         <id name="codServico" type="int">
@@ -22,32 +22,26 @@
                 <column name="servico_cod_servico" not-null="true" />
             </key>
             <many-to-many entity-name="negocio.basica.Funcionario">
-                <column name="funcionario_pessoa_cod_pessoa" not-null="true" />
+                <column name="funcionario_cod_pessoa" not-null="true" />
             </many-to-many>
         </set>
-        <set name="produtos" inverse="false" table="servico_has_produto">
+        <set name="servicoHasProdutos" inverse="true">
             <key>
                 <column name="servico_cod_servico" not-null="true" />
             </key>
-            <many-to-many entity-name="negocio.basica.Produto">
-                <column name="produto_cod_produto" not-null="true" />
-            </many-to-many>
+            <one-to-many class="negocio.basica.ServicoHasProduto" />
         </set>
-        <set name="agendas" inverse="false" table="agenda_has_servico">
+        <set name="agendaHasServicos" inverse="true">
             <key>
                 <column name="servico_cod_servico" not-null="true" />
             </key>
-            <many-to-many entity-name="negocio.basica.Agenda">
-                <column name="agenda_cod_agenda" not-null="true" />
-            </many-to-many>
+            <one-to-many class="negocio.basica.AgendaHasServico" />
         </set>
-        <set name="animals" inverse="false" table="servico_has_animal">
+        <set name="servicoHasAnimals" inverse="true">
             <key>
                 <column name="servico_cod_servico" not-null="true" />
             </key>
-            <many-to-many entity-name="negocio.basica.Animal">
-                <column name="animal_cod_animal" not-null="true" />
-            </many-to-many>
+            <one-to-many class="negocio.basica.ServicoHasAnimal" />
         </set>
     </class>
 </hibernate-mapping>

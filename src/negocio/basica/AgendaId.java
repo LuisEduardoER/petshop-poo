@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 19:55:05 by Hibernate Tools 3.2.0.CR1
 
 
 
@@ -10,14 +10,14 @@ public class AgendaId  implements java.io.Serializable {
 
 
      private int codAgenda;
-     private int funcionarioPessoaCodPessoa;
+     private int funcionarioCodPessoa;
 
     public AgendaId() {
     }
 
-    public AgendaId(int codAgenda, int funcionarioPessoaCodPessoa) {
+    public AgendaId(int codAgenda, int funcionarioCodPessoa) {
        this.codAgenda = codAgenda;
-       this.funcionarioPessoaCodPessoa = funcionarioPessoaCodPessoa;
+       this.funcionarioCodPessoa = funcionarioCodPessoa;
     }
    
     public int getCodAgenda() {
@@ -27,12 +27,12 @@ public class AgendaId  implements java.io.Serializable {
     public void setCodAgenda(int codAgenda) {
         this.codAgenda = codAgenda;
     }
-    public int getFuncionarioPessoaCodPessoa() {
-        return this.funcionarioPessoaCodPessoa;
+    public int getFuncionarioCodPessoa() {
+        return this.funcionarioCodPessoa;
     }
     
-    public void setFuncionarioPessoaCodPessoa(int funcionarioPessoaCodPessoa) {
-        this.funcionarioPessoaCodPessoa = funcionarioPessoaCodPessoa;
+    public void setFuncionarioCodPessoa(int funcionarioCodPessoa) {
+        this.funcionarioCodPessoa = funcionarioCodPessoa;
     }
 
 
@@ -43,14 +43,14 @@ public class AgendaId  implements java.io.Serializable {
 		 AgendaId castOther = ( AgendaId ) other; 
          
 		 return (this.getCodAgenda()==castOther.getCodAgenda())
- && (this.getFuncionarioPessoaCodPessoa()==castOther.getFuncionarioPessoaCodPessoa());
+ && (this.getFuncionarioCodPessoa()==castOther.getFuncionarioCodPessoa());
    }
    
    public int hashCode() {
          int result = 17;
          
          result = 37 * result + this.getCodAgenda();
-         result = 37 * result + this.getFuncionarioPessoaCodPessoa();
+         result = 37 * result + this.getFuncionarioCodPessoa();
          return result;
    }   
 

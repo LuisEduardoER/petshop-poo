@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:48:05 by Hibernate Tools 3.2.0.CR1
 
 
 
@@ -10,14 +10,14 @@ public class AnimalId  implements java.io.Serializable {
 
 
      private int codAnimal;
-     private int pessoaCodPessoa;
+     private int codPessoa;
 
     public AnimalId() {
     }
 
-    public AnimalId(int codAnimal, int pessoaCodPessoa) {
+    public AnimalId(int codAnimal, int codPessoa) {
        this.codAnimal = codAnimal;
-       this.pessoaCodPessoa = pessoaCodPessoa;
+       this.codPessoa = codPessoa;
     }
    
     public int getCodAnimal() {
@@ -27,12 +27,12 @@ public class AnimalId  implements java.io.Serializable {
     public void setCodAnimal(int codAnimal) {
         this.codAnimal = codAnimal;
     }
-    public int getPessoaCodPessoa() {
-        return this.pessoaCodPessoa;
+    public int getCodPessoa() {
+        return this.codPessoa;
     }
     
-    public void setPessoaCodPessoa(int pessoaCodPessoa) {
-        this.pessoaCodPessoa = pessoaCodPessoa;
+    public void setCodPessoa(int codPessoa) {
+        this.codPessoa = codPessoa;
     }
 
 
@@ -43,14 +43,14 @@ public class AnimalId  implements java.io.Serializable {
 		 AnimalId castOther = ( AnimalId ) other; 
          
 		 return (this.getCodAnimal()==castOther.getCodAnimal())
- && (this.getPessoaCodPessoa()==castOther.getPessoaCodPessoa());
+ && (this.getCodPessoa()==castOther.getCodPessoa());
    }
    
    public int hashCode() {
          int result = 17;
          
          result = 37 * result + this.getCodAnimal();
-         result = 37 * result + this.getPessoaCodPessoa();
+         result = 37 * result + this.getCodPessoa();
          return result;
    }   
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 08/09/2011 20:33:15 by Hibernate Tools 3.2.0.CR1 -->
+<!-- Generated 22/09/2011 20:56:28 by Hibernate Tools 3.2.0.CR1 -->
 <hibernate-mapping>
     <class name="negocio.basica.StatusAgenda" table="status_agenda" schema="public">
         <composite-id name="id" class="negocio.basica.StatusAgendaId">
@@ -11,16 +11,9 @@
             <key-property name="agendaCodAgenda" type="int">
                 <column name="agenda_cod_agenda" />
             </key-property>
-            <key-property name="agendaFuncionarioPessoaCodPessoa" type="int">
-                <column name="agenda_funcionario_pessoa_cod_pessoa" />
+            <key-property name="descricao" type="string">
+                <column name="descricao" length="50" />
             </key-property>
         </composite-id>
-        <many-to-one name="agenda" class="negocio.basica.Agenda" update="false" insert="false" fetch="select">
-            <column name="agenda_cod_agenda" not-null="true" />
-            <column name="agenda_funcionario_pessoa_cod_pessoa" not-null="true" />
-        </many-to-one>
-        <property name="descricao" type="string">
-            <column name="descricao" length="50" not-null="true" />
-        </property>
     </class>
 </hibernate-mapping>

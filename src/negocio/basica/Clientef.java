@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:56:27 by Hibernate Tools 3.2.0.CR1
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class Clientef  implements java.io.Serializable {
 
 
-     private int pessoaCodPessoa;
+     private int codPessoa;
      private Pessoa pessoa;
      private String nome;
      private String cpf;
@@ -20,8 +20,8 @@ public class Clientef  implements java.io.Serializable {
     public Clientef() {
     }
 
-    public Clientef(int pessoaCodPessoa, Pessoa pessoa, String nome, String cpf, String rg, Date datanasc) {
-       this.pessoaCodPessoa = pessoaCodPessoa;
+    public Clientef(int codPessoa, Pessoa pessoa, String nome, String cpf, String rg, Date datanasc) {
+       this.codPessoa = codPessoa;
        this.pessoa = pessoa;
        this.nome = nome;
        this.cpf = cpf;
@@ -29,12 +29,12 @@ public class Clientef  implements java.io.Serializable {
        this.datanasc = datanasc;
     }
    
-    public int getPessoaCodPessoa() {
-        return this.pessoaCodPessoa;
+    public int getCodPessoa() {
+        return this.codPessoa;
     }
     
-    public void setPessoaCodPessoa(int pessoaCodPessoa) {
-        this.pessoaCodPessoa = pessoaCodPessoa;
+    public void setCodPessoa(int codPessoa) {
+        this.codPessoa = codPessoa;
     }
     public Pessoa getPessoa() {
         return this.pessoa;
@@ -68,8 +68,8 @@ public class Clientef  implements java.io.Serializable {
         return this.datanasc;
     }
     
-    public void setDatanasc(Date datanasc) {
-        this.datanasc = datanasc;
+    public void setDatanasc(Date datanasc2) {
+        this.datanasc = datanasc2;
     }
 
 

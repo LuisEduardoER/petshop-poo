@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:15 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:56:28 by Hibernate Tools 3.2.0.CR1
 
 
 import java.util.List;
@@ -93,7 +93,7 @@ public class AnimalHome {
         }
     }
     
-    public Animal findById( negocio.basica.AnimalId id) {
+    public Animal findById( int id) {
         log.debug("getting Animal instance with id: " + id);
         try {
             Animal instance = (Animal) sessionFactory.getCurrentSession()
