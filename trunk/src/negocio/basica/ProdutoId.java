@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:54:50 by Hibernate Tools 3.2.0.CR1
 
 
 
@@ -10,14 +10,14 @@ public class ProdutoId  implements java.io.Serializable {
 
 
      private int codProduto;
-     private int fornecedorPessoaCodPessoa;
+     private int fornecedorCodPessoa;
 
     public ProdutoId() {
     }
 
-    public ProdutoId(int codProduto, int fornecedorPessoaCodPessoa) {
+    public ProdutoId(int codProduto, int fornecedorCodPessoa) {
        this.codProduto = codProduto;
-       this.fornecedorPessoaCodPessoa = fornecedorPessoaCodPessoa;
+       this.fornecedorCodPessoa = fornecedorCodPessoa;
     }
    
     public int getCodProduto() {
@@ -27,12 +27,12 @@ public class ProdutoId  implements java.io.Serializable {
     public void setCodProduto(int codProduto) {
         this.codProduto = codProduto;
     }
-    public int getFornecedorPessoaCodPessoa() {
-        return this.fornecedorPessoaCodPessoa;
+    public int getFornecedorCodPessoa() {
+        return this.fornecedorCodPessoa;
     }
     
-    public void setFornecedorPessoaCodPessoa(int fornecedorPessoaCodPessoa) {
-        this.fornecedorPessoaCodPessoa = fornecedorPessoaCodPessoa;
+    public void setFornecedorCodPessoa(int fornecedorCodPessoa) {
+        this.fornecedorCodPessoa = fornecedorCodPessoa;
     }
 
 
@@ -43,14 +43,14 @@ public class ProdutoId  implements java.io.Serializable {
 		 ProdutoId castOther = ( ProdutoId ) other; 
          
 		 return (this.getCodProduto()==castOther.getCodProduto())
- && (this.getFornecedorPessoaCodPessoa()==castOther.getFornecedorPessoaCodPessoa());
+ && (this.getFornecedorCodPessoa()==castOther.getFornecedorCodPessoa());
    }
    
    public int hashCode() {
          int result = 17;
          
          result = 37 * result + this.getCodProduto();
-         result = 37 * result + this.getFornecedorPessoaCodPessoa();
+         result = 37 * result + this.getFornecedorCodPessoa();
          return result;
    }   
 

@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:56:27 by Hibernate Tools 3.2.0.CR1
 
 
 import java.util.HashSet;
@@ -16,9 +16,9 @@ public class Servico  implements java.io.Serializable {
      private String duracao;
      private double valor;
      private Set funcionarios = new HashSet(0);
-     private Set produtos = new HashSet(0);
-     private Set agendas = new HashSet(0);
-     private Set animals = new HashSet(0);
+     private Set servicoHasProdutos = new HashSet(0);
+     private Set agendaHasServicos = new HashSet(0);
+     private Set servicoHasAnimals = new HashSet(0);
 
     public Servico() {
     }
@@ -30,15 +30,15 @@ public class Servico  implements java.io.Serializable {
         this.duracao = duracao;
         this.valor = valor;
     }
-    public Servico(int codServico, String descricao, String duracao, double valor, Set funcionarios, Set produtos, Set agendas, Set animals) {
+    public Servico(int codServico, String descricao, String duracao, double valor, Set funcionarios, Set servicoHasProdutos, Set agendaHasServicos, Set servicoHasAnimals) {
        this.codServico = codServico;
        this.descricao = descricao;
        this.duracao = duracao;
        this.valor = valor;
        this.funcionarios = funcionarios;
-       this.produtos = produtos;
-       this.agendas = agendas;
-       this.animals = animals;
+       this.servicoHasProdutos = servicoHasProdutos;
+       this.agendaHasServicos = agendaHasServicos;
+       this.servicoHasAnimals = servicoHasAnimals;
     }
    
     public int getCodServico() {
@@ -76,26 +76,26 @@ public class Servico  implements java.io.Serializable {
     public void setFuncionarios(Set funcionarios) {
         this.funcionarios = funcionarios;
     }
-    public Set getProdutos() {
-        return this.produtos;
+    public Set getServicoHasProdutos() {
+        return this.servicoHasProdutos;
     }
     
-    public void setProdutos(Set produtos) {
-        this.produtos = produtos;
+    public void setServicoHasProdutos(Set servicoHasProdutos) {
+        this.servicoHasProdutos = servicoHasProdutos;
     }
-    public Set getAgendas() {
-        return this.agendas;
-    }
-    
-    public void setAgendas(Set agendas) {
-        this.agendas = agendas;
-    }
-    public Set getAnimals() {
-        return this.animals;
+    public Set getAgendaHasServicos() {
+        return this.agendaHasServicos;
     }
     
-    public void setAnimals(Set animals) {
-        this.animals = animals;
+    public void setAgendaHasServicos(Set agendaHasServicos) {
+        this.agendaHasServicos = agendaHasServicos;
+    }
+    public Set getServicoHasAnimals() {
+        return this.servicoHasAnimals;
+    }
+    
+    public void setServicoHasAnimals(Set servicoHasAnimals) {
+        this.servicoHasAnimals = servicoHasAnimals;
     }
 
 

@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:56:27 by Hibernate Tools 3.2.0.CR1
 
 
 
@@ -10,16 +10,12 @@ public class StatusAgenda  implements java.io.Serializable {
 
 
      private StatusAgendaId id;
-     private Agenda agenda;
-     private String descricao;
 
     public StatusAgenda() {
     }
 
-    public StatusAgenda(StatusAgendaId id, Agenda agenda, String descricao) {
+    public StatusAgenda(StatusAgendaId id) {
        this.id = id;
-       this.agenda = agenda;
-       this.descricao = descricao;
     }
    
     public StatusAgendaId getId() {
@@ -28,20 +24,6 @@ public class StatusAgenda  implements java.io.Serializable {
     
     public void setId(StatusAgendaId id) {
         this.id = id;
-    }
-    public Agenda getAgenda() {
-        return this.agenda;
-    }
-    
-    public void setAgenda(Agenda agenda) {
-        this.agenda = agenda;
-    }
-    public String getDescricao() {
-        return this.descricao;
-    }
-    
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
 

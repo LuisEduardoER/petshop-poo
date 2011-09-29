@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 08/09/2011 20:33:15 by Hibernate Tools 3.2.0.CR1 -->
+<!-- Generated 22/09/2011 20:56:28 by Hibernate Tools 3.2.0.CR1 -->
 <hibernate-mapping>
     <class name="negocio.basica.Pessoa" table="pessoa" schema="public">
         <id name="codPessoa" type="int">
@@ -46,31 +46,31 @@
         </property>
         <set name="funcionarios" inverse="true">
             <key>
-                <column name="pessoa_cod_pessoa" not-null="true" unique="true" />
+                <column name="cod_pessoa" not-null="true" unique="true" />
             </key>
             <one-to-many class="negocio.basica.Funcionario" />
         </set>
         <set name="animals" inverse="true">
             <key>
-                <column name="pessoa_cod_pessoa" not-null="true" />
+                <column name="cod_pessoa" not-null="true" />
             </key>
             <one-to-many class="negocio.basica.Animal" />
         </set>
         <set name="clientefs" inverse="true">
             <key>
-                <column name="pessoa_cod_pessoa" not-null="true" unique="true" />
+                <column name="cod_pessoa" not-null="true" unique="true" />
             </key>
             <one-to-many class="negocio.basica.Clientef" />
         </set>
         <set name="fornecedors" inverse="true">
             <key>
-                <column name="pessoa_cod_pessoa" not-null="true" unique="true" />
+                <column name="cod_pessoa" not-null="true" unique="true" />
             </key>
             <one-to-many class="negocio.basica.Fornecedor" />
         </set>
         <set name="clientejs" inverse="true">
             <key>
-                <column name="pessoa_cod_pessoa" not-null="true" unique="true" />
+                <column name="cod_pessoa" not-null="true" unique="true" />
             </key>
             <one-to-many class="negocio.basica.Clientej" />
         </set>

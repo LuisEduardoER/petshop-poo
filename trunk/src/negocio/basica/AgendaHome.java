@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:15 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:56:28 by Hibernate Tools 3.2.0.CR1
 
 
 import java.util.List;
@@ -93,7 +93,7 @@ public class AgendaHome {
         }
     }
     
-    public Agenda findById( negocio.basica.AgendaId id) {
+    public Agenda findById( int id) {
         log.debug("getting Agenda instance with id: " + id);
         try {
             Agenda instance = (Agenda) sessionFactory.getCurrentSession()

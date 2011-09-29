@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:56:27 by Hibernate Tools 3.2.0.CR1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Fornecedor  implements java.io.Serializable {
 
 
-     private int pessoaCodPessoa;
+     private int codPessoa;
      private Pessoa pessoa;
      private String razaosocial;
      private String nomefantasia;
@@ -25,16 +25,16 @@ public class Fornecedor  implements java.io.Serializable {
     }
 
 	
-    public Fornecedor(int pessoaCodPessoa, Pessoa pessoa, String razaosocial, String cnpj, String ie, Date dataabertura) {
-        this.pessoaCodPessoa = pessoaCodPessoa;
+    public Fornecedor(int codPessoa, Pessoa pessoa, String razaosocial, String cnpj, String ie, Date dataabertura) {
+        this.codPessoa = codPessoa;
         this.pessoa = pessoa;
         this.razaosocial = razaosocial;
         this.cnpj = cnpj;
         this.ie = ie;
         this.dataabertura = dataabertura;
     }
-    public Fornecedor(int pessoaCodPessoa, Pessoa pessoa, String razaosocial, String nomefantasia, String cnpj, String ie, Date dataabertura, Set produtos) {
-       this.pessoaCodPessoa = pessoaCodPessoa;
+    public Fornecedor(int codPessoa, Pessoa pessoa, String razaosocial, String nomefantasia, String cnpj, String ie, Date dataabertura, Set produtos) {
+       this.codPessoa = codPessoa;
        this.pessoa = pessoa;
        this.razaosocial = razaosocial;
        this.nomefantasia = nomefantasia;
@@ -44,12 +44,12 @@ public class Fornecedor  implements java.io.Serializable {
        this.produtos = produtos;
     }
    
-    public int getPessoaCodPessoa() {
-        return this.pessoaCodPessoa;
+    public int getCodPessoa() {
+        return this.codPessoa;
     }
     
-    public void setPessoaCodPessoa(int pessoaCodPessoa) {
-        this.pessoaCodPessoa = pessoaCodPessoa;
+    public void setCodPessoa(int codPessoa) {
+        this.codPessoa = codPessoa;
     }
     public Pessoa getPessoa() {
         return this.pessoa;

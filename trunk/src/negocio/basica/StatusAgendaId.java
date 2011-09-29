@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:56:27 by Hibernate Tools 3.2.0.CR1
 
 
 
@@ -11,15 +11,15 @@ public class StatusAgendaId  implements java.io.Serializable {
 
      private int codStatus;
      private int agendaCodAgenda;
-     private int agendaFuncionarioPessoaCodPessoa;
+     private String descricao;
 
     public StatusAgendaId() {
     }
 
-    public StatusAgendaId(int codStatus, int agendaCodAgenda, int agendaFuncionarioPessoaCodPessoa) {
+    public StatusAgendaId(int codStatus, int agendaCodAgenda, String descricao) {
        this.codStatus = codStatus;
        this.agendaCodAgenda = agendaCodAgenda;
-       this.agendaFuncionarioPessoaCodPessoa = agendaFuncionarioPessoaCodPessoa;
+       this.descricao = descricao;
     }
    
     public int getCodStatus() {
@@ -36,12 +36,12 @@ public class StatusAgendaId  implements java.io.Serializable {
     public void setAgendaCodAgenda(int agendaCodAgenda) {
         this.agendaCodAgenda = agendaCodAgenda;
     }
-    public int getAgendaFuncionarioPessoaCodPessoa() {
-        return this.agendaFuncionarioPessoaCodPessoa;
+    public String getDescricao() {
+        return this.descricao;
     }
     
-    public void setAgendaFuncionarioPessoaCodPessoa(int agendaFuncionarioPessoaCodPessoa) {
-        this.agendaFuncionarioPessoaCodPessoa = agendaFuncionarioPessoaCodPessoa;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
 
@@ -53,7 +53,7 @@ public class StatusAgendaId  implements java.io.Serializable {
          
 		 return (this.getCodStatus()==castOther.getCodStatus())
  && (this.getAgendaCodAgenda()==castOther.getAgendaCodAgenda())
- && (this.getAgendaFuncionarioPessoaCodPessoa()==castOther.getAgendaFuncionarioPessoaCodPessoa());
+ && ( (this.getDescricao()==castOther.getDescricao()) || ( this.getDescricao()!=null && castOther.getDescricao()!=null && this.getDescricao().equals(castOther.getDescricao()) ) );
    }
    
    public int hashCode() {
@@ -61,7 +61,7 @@ public class StatusAgendaId  implements java.io.Serializable {
          
          result = 37 * result + this.getCodStatus();
          result = 37 * result + this.getAgendaCodAgenda();
-         result = 37 * result + this.getAgendaFuncionarioPessoaCodPessoa();
+         result = 37 * result + ( getDescricao() == null ? 0 : this.getDescricao().hashCode() );
          return result;
    }   
 

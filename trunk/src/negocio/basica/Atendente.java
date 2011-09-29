@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:56:27 by Hibernate Tools 3.2.0.CR1
 
 
 
@@ -9,23 +9,23 @@ package negocio.basica;
 public class Atendente  implements java.io.Serializable {
 
 
-     private int funcionarioPessoaCodPessoa;
+     private int funcionarioCodPessoa;
      private Funcionario funcionario;
 
     public Atendente() {
     }
 
-    public Atendente(int funcionarioPessoaCodPessoa, Funcionario funcionario) {
-       this.funcionarioPessoaCodPessoa = funcionarioPessoaCodPessoa;
+    public Atendente(int funcionarioCodPessoa, Funcionario funcionario) {
+       this.funcionarioCodPessoa = funcionarioCodPessoa;
        this.funcionario = funcionario;
     }
    
-    public int getFuncionarioPessoaCodPessoa() {
-        return this.funcionarioPessoaCodPessoa;
+    public int getFuncionarioCodPessoa() {
+        return this.funcionarioCodPessoa;
     }
     
-    public void setFuncionarioPessoaCodPessoa(int funcionarioPessoaCodPessoa) {
-        this.funcionarioPessoaCodPessoa = funcionarioPessoaCodPessoa;
+    public void setFuncionarioCodPessoa(int funcionarioCodPessoa) {
+        this.funcionarioCodPessoa = funcionarioCodPessoa;
     }
     public Funcionario getFuncionario() {
         return this.funcionario;

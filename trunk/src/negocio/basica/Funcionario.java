@@ -1,5 +1,5 @@
 package negocio.basica;
-// Generated 08/09/2011 20:33:14 by Hibernate Tools 3.2.0.CR1
+// Generated 22/09/2011 20:56:27 by Hibernate Tools 3.2.0.CR1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Funcionario  implements java.io.Serializable {
 
 
-     private int pessoaCodPessoa;
+     private int codPessoa;
      private Pessoa pessoa;
      private String matricula;
      private String login;
@@ -30,8 +30,8 @@ public class Funcionario  implements java.io.Serializable {
     }
 
 	
-    public Funcionario(int pessoaCodPessoa, Pessoa pessoa, String matricula, String login, String senha, String nome, String cpf, String rg, Date datanasc) {
-        this.pessoaCodPessoa = pessoaCodPessoa;
+    public Funcionario(int codPessoa, Pessoa pessoa, String matricula, String login, String senha, String nome, String cpf, String rg, Date datanasc) {
+        this.codPessoa = codPessoa;
         this.pessoa = pessoa;
         this.matricula = matricula;
         this.login = login;
@@ -41,8 +41,8 @@ public class Funcionario  implements java.io.Serializable {
         this.rg = rg;
         this.datanasc = datanasc;
     }
-    public Funcionario(int pessoaCodPessoa, Pessoa pessoa, String matricula, String login, String senha, String nome, String cpf, String rg, Date datanasc, Set atendentes, Set agendas, Set veterinarios, Set servicos) {
-       this.pessoaCodPessoa = pessoaCodPessoa;
+    public Funcionario(int codPessoa, Pessoa pessoa, String matricula, String login, String senha, String nome, String cpf, String rg, Date datanasc, Set atendentes, Set agendas, Set veterinarios, Set servicos) {
+       this.codPessoa = codPessoa;
        this.pessoa = pessoa;
        this.matricula = matricula;
        this.login = login;
@@ -57,12 +57,12 @@ public class Funcionario  implements java.io.Serializable {
        this.servicos = servicos;
     }
    
-    public int getPessoaCodPessoa() {
-        return this.pessoaCodPessoa;
+    public int getCodPessoa() {
+        return this.codPessoa;
     }
     
-    public void setPessoaCodPessoa(int pessoaCodPessoa) {
-        this.pessoaCodPessoa = pessoaCodPessoa;
+    public void setCodPessoa(int codPessoa) {
+        this.codPessoa = codPessoa;
     }
     public Pessoa getPessoa() {
         return this.pessoa;
