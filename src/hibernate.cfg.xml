@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.password">dng3696</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/PetShop?autoReconnect=true</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <mapping resource="negocio/basica/AgendaHasServico.hbm.xml" />
+        <mapping resource="negocio/basica/Fornecedor.hbm.xml" />
+        <mapping resource="negocio/basica/Pessoa.hbm.xml" />
+        <mapping resource="negocio/basica/Produto.hbm.xml" />
+        <mapping resource="negocio/basica/StatusAgenda.hbm.xml" />
+        <mapping resource="negocio/basica/ServicoHasAnimal.hbm.xml" />
+        <mapping resource="negocio/basica/Agenda.hbm.xml" />
+        <mapping resource="negocio/basica/Veterinario.hbm.xml" />
+        <mapping resource="negocio/basica/Clientej.hbm.xml" />
+        <mapping resource="negocio/basica/Animal.hbm.xml" />
+        <mapping resource="negocio/basica/ServicoHasProduto.hbm.xml" />
+        <mapping resource="negocio/basica/Atendente.hbm.xml" />
+        <mapping resource="negocio/basica/Clientef.hbm.xml" />
+        <mapping resource="negocio/basica/Servico.hbm.xml" />
+        <mapping resource="negocio/basica/Funcionario.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>
