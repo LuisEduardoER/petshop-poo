@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/09/2011 20:56:28 by Hibernate Tools 3.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="negocio.basica.ServicoHasProduto" table="servico_has_produto" schema="public">
+        <composite-id name="id" class="negocio.basica.ServicoHasProdutoId">
+            <key-property name="servicoCodServico" type="int">
+                <column name="servico_cod_servico" />
+            </key-property>
+            <key-property name="produtoCodProduto" type="int">
+                <column name="produto_cod_produto" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="servico" class="negocio.basica.Servico" update="false" insert="false" fetch="select">
+            <column name="servico_cod_servico" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
