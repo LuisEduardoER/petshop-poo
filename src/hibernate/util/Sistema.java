@@ -26,7 +26,7 @@ public class Sistema {
 		
 		Funcionario f = null;
 		Pessoa p = null;
-		ControladorFuncionario Controlf = null;
+		//ControladorFuncionario Controlf = null;
 		ControladorPessoa Controlp = null;
 		
 		do {
@@ -141,10 +141,8 @@ public class Sistema {
 					f.setPessoa(p);
 
 					Controlp = new ControladorPessoa();
-					Controlp.Incluir(p);
+					Controlp.Incluir(p,f);
 					
-					Controlf = new ControladorFuncionario();
-					Controlf.Incluir(f);
 					
 					break;
 				case 2:
@@ -240,10 +238,8 @@ public class Sistema {
 		            p3.setGrupo(grupo_a);
 					
 					ControladorPessoa ControlP3 = new ControladorPessoa();
-		            ControlP3.Alterar(p3);
+		            ControlP3.Alterar(p3,f3);
 		            
-					ControladorFuncionario ControlF3 = new ControladorFuncionario();
-		            ControlF3.Alterar(f3);
 		            
 					//HibernateUtil.beginTransaction();
 					//HibernateUtil.getSession().update(p3);

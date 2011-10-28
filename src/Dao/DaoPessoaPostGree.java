@@ -1,7 +1,8 @@
 package Dao;
 
 import hibernate.util.HibernateUtil;
-import negocio.basica.Pessoa;;
+import negocio.basica.Pessoa;
+import negocio.basica.Funcionario;
 
 public class DaoPessoaPostGree implements IDaoPessoa {
 	
