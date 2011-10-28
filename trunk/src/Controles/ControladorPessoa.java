@@ -6,6 +6,7 @@ import Dao.DaoFuncionarioPostGree;
 import Dao.DaoPessoaPostGree;
 import Dao.IDaoFuncionario;
 import Dao.IDaoPessoa;
+import negocio.basica.Funcionario;
 
 public class ControladorPessoa {
 
@@ -16,11 +17,17 @@ public class ControladorPessoa {
 		
 	}
 	
-	public void Incluir(Pessoa P){
+	public void Incluir(Pessoa P,Funcionario F){
 		
 		HibernateUtil.beginTransaction();
 
 		daoPessoa.Incluir(P);
+
+		ControladorFuncionario Controlf = null;
+		
+		Controlf = new ControladorFuncionario();
+		Controlf.Incluir(F);
+		
 		
 		HibernateUtil.commitTransaction();
 		
@@ -28,10 +35,15 @@ public class ControladorPessoa {
 		
 	}
 	
-	public void Alterar(Pessoa P){
+	public void Alterar(Pessoa P, Funcionario F){
 		
 		HibernateUtil.beginTransaction();
 		daoPessoa.Alterar(P);
+	
+		ControladorFuncionario ControlF3 = new ControladorFuncionario();
+        ControlF3.Alterar(F);
+		
+		
 		HibernateUtil.commitTransaction();
 
 		
