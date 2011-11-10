@@ -8,11 +8,25 @@ import Dao.IDaoFuncionario;
 public class ControladorFuncionario {
 	
 	private IDaoFuncionario daoFuncionario;
+    private static ControladorFuncionario Instance;  // Declaração para uso de Singleton
 	
-	public ControladorFuncionario(){
+	private ControladorFuncionario(){
 		daoFuncionario = new DaoFuncionarioPostGree();
 		
 	}
+	
+
+	/* 
+	 *     Alessandro Gonçalves
+	 *     Método para chamar a chamada do construtor usando Singleton
+	 */
+	public static ControladorFuncionario GetControladorFuncionario(){
+        if (Instance==null)
+     	   Instance =  new ControladorFuncionario();
+        return Instance;
+		
+	} 	
+	
 	
 	public void Incluir(Funcionario F){
 		
