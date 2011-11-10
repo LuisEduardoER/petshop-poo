@@ -560,7 +560,8 @@ public class Sistema {
 	           		pf.setDatacad(dcad_f);
 	           		pf.setGrupo(grupo_f);
 
-					fn.setPessoa(pf);
+					Controlp = ControladorPessoa.GetControladorPessoa() ;
+					Controlp.Incluir(p,f);
 					
 					HibernateUtil.beginTransaction();
 					HibernateUtil.getSession().save(pf);
