@@ -140,7 +140,7 @@ public class Sistema {
 		            p.setGrupo(grupo);
 					f.setPessoa(p);
 
-					Controlp = new ControladorPessoa();
+					Controlp = ControladorPessoa.GetControladorPessoa() ;
 					Controlp.Incluir(p,f);
 					
 					
@@ -237,7 +237,7 @@ public class Sistema {
 		            p3.setDatacad(dcad_a);
 		            p3.setGrupo(grupo_a);
 					
-					ControladorPessoa ControlP3 = new ControladorPessoa();
+					ControladorPessoa ControlP3 = ControladorPessoa.GetControladorPessoa();
 		            ControlP3.Alterar(p3,f3);
 		            
 		            
@@ -561,10 +561,15 @@ public class Sistema {
 	           		pf.setGrupo(grupo_f);
 
 					fn.setPessoa(pf);
+					
 					HibernateUtil.beginTransaction();
 					HibernateUtil.getSession().save(pf);
 					HibernateUtil.getSession().save(fn);
 					HibernateUtil.commitTransaction();
+					
+					
+					
+					
 				case 2:
 				case 3:
 				case 4:
