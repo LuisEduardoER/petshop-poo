@@ -11,11 +11,25 @@ import negocio.basica.Funcionario;
 public class ControladorPessoa {
 
 	private IDaoPessoa daoPessoa;
+	private static ControladorPessoa Instance;
 	
-	public ControladorPessoa(){
+	private ControladorPessoa(){
 		daoPessoa = new DaoPessoaPostGree();
-		
+	
 	}
+	
+	/* 
+	 *     Alessandro Gonçalves
+	 *     Método para chamar a chamada do construtor usando Singleton
+	 */
+	
+	public static ControladorPessoa GetControladorPessoa(){
+           if (Instance==null)
+        	   Instance =  new ControladorPessoa();
+           return Instance;
+		
+	} 	
+	
 	
 	public void Incluir(Pessoa P,Funcionario F){
 		
@@ -25,7 +39,7 @@ public class ControladorPessoa {
 
 		ControladorFuncionario Controlf = null;
 		
-		Controlf = new ControladorFuncionario();
+		Controlf = ControladorFuncionario.GetControladorFuncionario();
 		Controlf.Incluir(F);
 		
 		
@@ -40,7 +54,7 @@ public class ControladorPessoa {
 		HibernateUtil.beginTransaction();
 		daoPessoa.Alterar(P);
 	
-		ControladorFuncionario ControlF3 = new ControladorFuncionario();
+		ControladorFuncionario ControlF3 =  ControladorFuncionario.GetControladorFuncionario();
         ControlF3.Alterar(F);
 		
 		
