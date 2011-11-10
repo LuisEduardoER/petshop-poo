@@ -8,17 +8,14 @@ import Dao.IDaoFornecedor;
 public class ControladorFornecedor {
 	
 	private IDaoFornecedor daoFornecedor;
-    private static ControladorFornecedor Instance;
+    	private static ControladorFornecedor Instance;
 	
 	private ControladorFornecedor(){
 		daoFornecedor = new DaoFornecedorPostGree();
 		
 	}
 	
-	/* 
-	 *     Alessandro Gonçalves
-	 *     Método para chamar a chamada do construtor usando Singleton
-	 */
+	
 	public static ControladorFornecedor GetControladorFornecedor(){
         if (Instance==null)
      	   Instance =  new ControladorFornecedor();
