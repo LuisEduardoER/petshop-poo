@@ -31,16 +31,16 @@ public class ControladorPessoa {
 	} 	
 	
 	
-	public void Incluir(Pessoa P,Funcionario F){
+	public void Incluir(Pessoa P){
 		
 		HibernateUtil.beginTransaction();
 
 		daoPessoa.Incluir(P);
 
-		ControladorFuncionario Controlf = null;
+//		ControladorFuncionario Controlf = null;
 		
-		Controlf = ControladorFuncionario.GetControladorFuncionario();
-		Controlf.Incluir(F);
+	//	Controlf = ControladorFuncionario.GetControladorFuncionario();
+	//	Controlf.Incluir(F);
 		
 		
 		HibernateUtil.commitTransaction();
@@ -49,13 +49,13 @@ public class ControladorPessoa {
 		
 	}
 	
-	public void Alterar(Pessoa P, Funcionario F){
+	public void Alterar(Pessoa P){
 		
 		HibernateUtil.beginTransaction();
 		daoPessoa.Alterar(P);
 	
-		ControladorFuncionario ControlF3 =  ControladorFuncionario.GetControladorFuncionario();
-        ControlF3.Alterar(F);
+		//ControladorFuncionario ControlF3 =  ControladorFuncionario.GetControladorFuncionario();
+        //ControlF3.Alterar(F);
 		
 		
 		HibernateUtil.commitTransaction();

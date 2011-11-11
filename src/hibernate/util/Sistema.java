@@ -144,8 +144,8 @@ public class Sistema {
 					//Controlp = ControladorPessoa.GetControladorPessoa() ;
 					//Controlp.Incluir(p,f);
 					
-					Fachada.GetInstancia().IncluirPessoa(p, f);
-					
+					Fachada.GetInstancia().IncluirPessoa(p);
+					Fachada.GetInstancia().IncluirFuncionario(f);
 					
 					break;
 				case 2:
@@ -240,13 +240,8 @@ public class Sistema {
 		            p3.setDatacad(dcad_a);
 		            p3.setGrupo(grupo_a);
 					
-					Fachada.GetInstancia().IncluirPessoa(p3, f3);
-		            //ControlP3.Alterar(p3,f3);
-		            
-		            
-					//HibernateUtil.beginTransaction();
-					//HibernateUtil.getSession().update(p3);
-					//HibernateUtil.commitTransaction();
+					Fachada.GetInstancia().IncluirPessoa(p3);
+					Fachada.GetInstancia().IncluirFuncionario(f3);
 					
 					break;
 				case 3:
@@ -278,7 +273,6 @@ public class Sistema {
 					HibernateUtil.getSession().delete(f2);
 					HibernateUtil.commitTransaction();
 
-					
 					Pessoa p2 = new Pessoa();
 					p2 = (Pessoa) HibernateUtil.getSession().get(Pessoa.class, codigo1);
 
@@ -565,10 +559,13 @@ public class Sistema {
 
 					fn.setPessoa(pf);
 					
-					HibernateUtil.beginTransaction();
-					HibernateUtil.getSession().save(pf);
-					HibernateUtil.getSession().save(fn);
-					HibernateUtil.commitTransaction();
+					Fachada.GetInstancia().IncluirPessoa(pf);
+					Fachada.GetInstancia().IncluirFornecedor(fn);
+					
+					//HibernateUtil.beginTransaction();
+					//HibernateUtil.getSession().save(pf);
+					//HibernateUtil.getSession().save(fn);
+					//HibernateUtil.commitTransaction();
 					
 					
 					
