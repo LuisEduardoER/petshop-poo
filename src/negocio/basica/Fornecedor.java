@@ -11,14 +11,7 @@ import java.util.Set;
  */
 public class Fornecedor  implements java.io.Serializable {
 
-	
-	 @Override
-	public String toString() {
-		return "Fornecedor [codPessoa=" + codPessoa + ", pessoa=" + pessoa
-				+ ", razaosocial=" + razaosocial + ", nomefantasia=" + nomefantasia
-				+ ", cnpj=" + cnpj + ", ie=" + ie + ", dataabertura=" + dataabertura
-				+ ", produtos=" + produtos + "]";
-	}
+
      private int codPessoa;
      private Pessoa pessoa;
      private String razaosocial;
