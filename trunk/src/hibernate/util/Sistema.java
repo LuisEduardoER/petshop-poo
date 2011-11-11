@@ -8,14 +8,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import Controles.ControladorFuncionario;
-import Controles.ControladorPessoa;
-
 import negocio.basica.Clientef;
 import negocio.basica.Clientej;
 import negocio.basica.Fornecedor;
 import negocio.basica.Funcionario;
 import negocio.basica.Pessoa;
+
+
 
 public class Sistema {
 
@@ -26,8 +25,6 @@ public class Sistema {
 		
 		Funcionario f = null;
 		Pessoa p = null;
-		//ControladorFuncionario Controlf = null;
-		ControladorPessoa Controlp = null;
 		
 		do {
 
@@ -82,6 +79,16 @@ public class Sistema {
 				    DateFormat df = new SimpleDateFormat("dd/MM/yyyy");    
 				    Date dnasc = df.parse(datanasc);
 					
+					f = new Funcionario();
+					f.setCpf(cpf);
+					f.setDatanasc(dnasc);
+					f.setLogin(log);
+					f.setMatricula(mat);
+					f.setRg(rg);
+					f.setSenha(senha);
+					f.setNome(nome);
+					f.setCodPessoa(codigo);
+
 					System.out.println("Endereço : ");
 					String end = leitor.nextLine();
 					
@@ -114,18 +121,9 @@ public class Sistema {
 					
 					System.out.println("Grupo : ");
 					String grupo = leitor.nextLine();
-							
-					f = new Funcionario();
-					f.setCpf(cpf);
-					f.setDatanasc(dnasc);
-					f.setLogin(log);
-					f.setMatricula(mat);
-					f.setRg(rg);
-					f.setSenha(senha);
-					f.setNome(nome);
-					f.setCodPessoa(codigo);
-					
+										
 					p = new Pessoa();
+				
 					p.setCodPessoa(codigo);
 		            p.setEndereco(end);
 		            p.setNumero(num);
@@ -139,9 +137,21 @@ public class Sistema {
 		            p.setDatacad(dcad);
 		            p.setGrupo(grupo);
 					f.setPessoa(p);
-
-					Controlp = ControladorPessoa.GetControladorPessoa() ;
-					Controlp.Incluir(p,f);
+					
+					
+					HibernateUtil.beginTransaction();
+					HibernateUtil.getSession().save(p);
+					HibernateUtil.getSession().save(f);
+					HibernateUtil.commitTransaction();
+					
+					/*
+					
+					Funcionario f2 = new Funcionario();
+					f2 = (Funcionario) HibernateUtil.getSession().get(Funcionario.class, 1);
+				
+					HibernateUtil.getSession().update(f2);
+					
+					*/
 					
 					
 					break;
@@ -154,7 +164,7 @@ public class Sistema {
 					
 					Funcionario f3 = new Funcionario();
 					Pessoa p3 = new Pessoa();
-					
+										
 					leitor = new Scanner(System.in);
 										
 					System.out.println("Matricula : ");
@@ -237,13 +247,10 @@ public class Sistema {
 		            p3.setDatacad(dcad_a);
 		            p3.setGrupo(grupo_a);
 					
-					ControladorPessoa ControlP3 = ControladorPessoa.GetControladorPessoa();
-		            ControlP3.Alterar(p3,f3);
-		            
-		            
-					//HibernateUtil.beginTransaction();
-					//HibernateUtil.getSession().update(p3);
-					//HibernateUtil.commitTransaction();
+					HibernateUtil.beginTransaction();
+					HibernateUtil.getSession().update(f3);
+					HibernateUtil.getSession().update(p3);
+					HibernateUtil.commitTransaction();
 					
 					break;
 				case 3:
@@ -560,17 +567,11 @@ public class Sistema {
 	           		pf.setDatacad(dcad_f);
 	           		pf.setGrupo(grupo_f);
 
-					Controlp = ControladorPessoa.GetControladorPessoa() ;
-					Controlp.Incluir(p,f);
-					
+					fn.setPessoa(pf);
 					HibernateUtil.beginTransaction();
 					HibernateUtil.getSession().save(pf);
 					HibernateUtil.getSession().save(fn);
 					HibernateUtil.commitTransaction();
-					
-					
-					
-					
 				case 2:
 				case 3:
 				case 4:
@@ -616,7 +617,6 @@ public class Sistema {
 		
 		
 	}
-
 	
 	
 	
