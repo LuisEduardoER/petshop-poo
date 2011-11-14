@@ -15,10 +15,7 @@ public class ControladorFornecedor {
 		
 	}
 	
-	/* 
-	 *     Alessandro Gonçalves
-	 *     Método para chamar a chamada do construtor usando Singleton
-	 */
+	
 	public static ControladorFornecedor GetControladorFornecedor(){
         if (Instance==null)
      	   Instance =  new ControladorFornecedor();

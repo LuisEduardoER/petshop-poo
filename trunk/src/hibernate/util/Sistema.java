@@ -390,17 +390,17 @@ public class Sistema {
 					p = new Pessoa();
 				
 					p.setCodPessoa(cod_pessoa);
-		           	p.setEndereco(end);
-		      	    p.setNumero(num);
-		            p.setComplemento(compl);
-		            p.setBairro(bairro);
-		            p.setCidade(cidade);
-		            p.setCep(cep);
-		            p.setUf(uf);
-		            p.setTelefone1(tel);
-		            p.setEmail(email);
-		            p.setDatacad(dcad);
-		            p.setGrupo(grupo);
+		           		p.setEndereco(end);
+		      	    		p.setNumero(num);
+		            		p.setComplemento(compl);
+		            		p.setBairro(bairro);
+		            		p.setCidade(cidade);
+		            		p.setCep(cep);
+		            		p.setUf(uf);
+		            		p.setTelefone1(tel);
+		            		p.setEmail(email);
+		           		p.setDatacad(dcad);
+		           		p.setGrupo(grupo);
 
 					cf.setPessoa(p);
 					cj.setPessoa(p);
@@ -491,12 +491,11 @@ public class Sistema {
 					System.out.println("CNPJ:");
 					String cnpj_f = leitor.nextLine();
 					
-					System.out.println("Data Nascimento : ");
+					System.out.println("Data Abertura: ");
 					String databe_f = leitor.nextLine();    		//new Date();
 
 					System.out.println("ie : ");
 					String ie_f = leitor.nextLine();
-					
 					
 					DateFormat df_f = new SimpleDateFormat("dd/MM/yyyy");    
 					Date databe_f1 = df_f.parse(databe_f);
@@ -545,17 +544,17 @@ public class Sistema {
 					Pessoa pf = new Pessoa();
 				
 					pf.setCodPessoa(codigo_f);
-	           		pf.setEndereco(end_f);
-	         		pf.setNumero(num_f);
-	          		pf.setComplemento(compl_f);
-	         	   	pf.setBairro(bairro_f);
-	           	 	pf.setCidade(cidade_f);
-	           	 	pf.setCep(cep_f);
-            		pf.setUf(uf_f);
-            		pf.setTelefone1(tel_f);
-              	 	pf.setEmail(email_f);
-	           		pf.setDatacad(dcad_f);
-	           		pf.setGrupo(grupo_f);
+	           			pf.setEndereco(end_f);
+	         			pf.setNumero(num_f);
+	          			pf.setComplemento(compl_f);
+	         	   		pf.setBairro(bairro_f);
+	           	 		pf.setCidade(cidade_f);
+	           	 		pf.setCep(cep_f);
+            				pf.setUf(uf_f);
+            				pf.setTelefone1(tel_f);
+              	 			pf.setEmail(email_f);
+	           			pf.setDatacad(dcad_f);
+	           			pf.setGrupo(grupo_f);
 
 					fn.setPessoa(pf);
 					
@@ -571,7 +570,109 @@ public class Sistema {
 					
 					
 				case 2:
+					System.out.println("Iniciando a alteracao de Fornecedor");
+
+					leitor = new Scanner(System.in);
+					System.out.println("Digite o Código do Fornecedor que será alterado? ");
+					int codigo_f = leitor.nextInt();
+					
+					Fornecedor f3 = new Fornecedor();
+					Pessoa p3 = new Pessoa();
+					
+					leitor = new Scanner(System.in);
+										
+					System.out.println("Razão Social: ");
+					String razsoc_f = leitor.nextLine();
+
+					System.out.println("Nome Fantasia: ");
+					String nomfan_f = leitor.nextLine();
+					
+					System.out.println("CNPJ: ");
+					String cnpj = leitor.nextLine();
+					
+					System.out.println("Data Abertura: ");
+					String databe_f = leitor.nextLine();
+					
+					System.out.println("Inscrição Estadual: ");
+					String ie_f = leitor.nextLine();
+					
+
+					
+				    DateFormat df_a = new SimpleDateFormat("dd/MM/yyyy");    
+				    Date databe_f = df_a.parse(databe_f);
+					
+					System.out.println("Endereço : ");
+					String end_a = leitor.nextLine();
+					
+					System.out.println("Número : ");
+					String num_a = leitor.nextLine();
+					
+					System.out.println("Complemento : ");
+					String compl_a = leitor.nextLine();
+					
+					System.out.println("Bairro : ");
+					String bairro_a = leitor.nextLine();
+					
+					System.out.println("Cidade : ");
+					String cidade_a = leitor.nextLine();
+					
+					System.out.println("CEP : ");
+					String cep_a = leitor.nextLine();
+					
+					System.out.println("Estado : ");
+					String uf_a = leitor.nextLine();
+					
+					System.out.println("Telefone : ");
+					String tel_a = leitor.nextLine();
+					
+					System.out.println("e-mail : ");
+					String email_a = leitor.nextLine();
+					
+					Date dcad_a = new Date();
+					
+					System.out.println("Grupo : ");
+					String grupo_a = leitor.nextLine();
+					
+			    
+					f3 = (Fornecedor) HibernateUtil.getSession().get(Fornecedor.class, codigo_f);
+					p3 = (Pessoa) HibernateUtil.getSession().get(Pessoa.class, codigoa);
+
+					f3.setRazaosocial(razsoc_f);
+					f3.setNomefantasia(nomfan_f);
+					f3.setCnpj(cnpj_f);
+					f3.setDataabertura(databe_f);
+					f3.setIe(ie_f);
+					
+		            p3.setEndereco(end_a);
+		            p3.setNumero(num_a);
+		            p3.setComplemento(compl_a);
+		            p3.setBairro(bairro_a);
+		            p3.setCidade(cidade_a);
+		            p3.setCep(cep_a);
+		            p3.setUf(uf_a);
+		            p3.setTelefone1(tel_a);
+		            p3.setEmail(email_a);
+		            p3.setDatacad(dcad_a);
+		            p3.setGrupo(grupo_a);
+					
+					Fachada.GetInstancia().IncluirPessoa(p3);
+					Fachada.GetInstancia().IncluirFornecedor(f3);
+					
+					break;
 				case 3:
+					
+					System.out.println("Iniciando a listagem de Fornecedor");
+					
+					HibernateUtil.beginTransaction();
+					List<Fornecedor> lista =  HibernateUtil.getSession().createCriteria(Fornecedor.class).list();
+					for (int i = 0; i<lista.size(); i++){
+						Fornecedor u1 =  lista.get(i);
+						System.out.println(u1);
+					}
+					
+					HibernateUtil.commitTransaction();
+
+					break;
 				case 4:
 					System.out.println("Iniciando a exclusao de Fornecedor");
 				
